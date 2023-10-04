@@ -1,7 +1,7 @@
 # configured aws provider with proper credentials
 provider "aws" {
-  region    = "us-east-1"
-  profile   = "yusuf"
+  region    = "us-west-1"
+  profile   = "Hameed"
 }
 
 
@@ -43,13 +43,13 @@ resource "aws_security_group" "ec2_security_group_nexus" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
-  # ingress {
-  #   description      = "http proxy access"
-  #   from_port        = 8082
-  #   to_port          = 8082
-  #   protocol         = "tcp"
-  #   cidr_blocks      = ["0.0.0.0/0"]
-  # }
+  ingress {
+    description      = "http"
+    from_port        = 8080
+    to_port          = 8080
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
 
   # allow access on port 22
   ingress {
@@ -97,7 +97,7 @@ resource "aws_instance" "ec2_instance" {
   instance_type          = "t3.xlarge"
   subnet_id              = aws_default_subnet.default_az1.id
   vpc_security_group_ids = [aws_security_group.ec2_security_group_nexus.id]
-  key_name               = "devopskeypair"
+  key_name               = "NC_kp"
 
   tags = {
     Name = "nexus_server"
