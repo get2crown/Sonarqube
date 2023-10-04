@@ -3,7 +3,8 @@
     <title>Welcome to my web page</title>
   </head>
   <body bgcolor="#7FFF00">
-    <h1>Hello from julycohort Again</h1>
+    <h1>Hello from julycohort Again </h1>
+    <h3>This is an edited version; version 2 </h3>
     <!--Form declaration. Must have an action attribute -->
         <form action="C:/JonnyJava/FirstJava.html/profile.html" method="post">
             <p>Let us learn something about your music lifestyle </p> <!--This control is for mutplie line comment-->
